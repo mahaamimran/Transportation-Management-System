@@ -6,15 +6,17 @@
 // aggregation used
 // display complete
 // calculate fare complete
-// operator overloading used
-// oop concepts used 
+// operator overloading complete
+// sorting complete
+// oop concepts complete
+
 #include <iostream>
 #include "Header.h"
 using namespace std;
 Booking *b=new Booking[100];
 int admin(){
-    int choice;
     int count=0;
+    int choice;
     do{
         cout << "What action would you like to perform?\n";
         cout << "1. View all routes\n";
@@ -219,10 +221,10 @@ int admin(){
                 break;
        }
    }while(choice!=4);
-return count;
+    return count;
 }
 void user(int count){
-   
+ 
     int choice;
     do{
         cout<<"What would you like to do?\n";
@@ -257,6 +259,10 @@ void user(int count){
                 User u(name,b[route-1]);
                 // decrementing available seat capacity
                 b[route-1].getVehicle().setCapacity(b[route-1].getVehicle().getCapacity()-seats);
+                cout<<"\nSuccesfully booked!\n";
+                
+                u.display();
+                cout<<b[route-1]<<endl;
                 break;
            }
                 break;
@@ -268,9 +274,10 @@ void user(int count){
    }while(choice!=3);
 }
 int main(){
+    int count=0;
     cout << "Welcome to Ravka Transportation System\n";
     int choice;
-    int count=0;
+
     do{
         cout << "Are you an admin or a user?\n";
         cout << "1. Admin\n";
@@ -423,9 +430,7 @@ Vehicle Booking::getVehicle(){
 void Booking::display(){
     cout<<"Status: ";
     cout<<(status?"Completed.":"Not Completed")<<endl;
-    cout<<"<<Route>> "<<endl;
     route.display();
-    cout<<"<<Vehicle>> "<<endl;
     vehicle.display();
 }
 // user
@@ -451,10 +456,8 @@ void User::display(){
 }
 // operator overloading
 ostream& operator<<(ostream& out,Booking& b){
-    out<<(b.status?"Completed.":"Not Completed")<<endl;
-    out<<"Route: "<<endl;
+    out<<"Status: "<<(b.status?"Completed.":"Not Completed")<<endl;
     out<<b.route;
-    out<<"Vehicle: "<<endl;
     out<<b.vehicle;
     return out;
 }

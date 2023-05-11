@@ -1,22 +1,19 @@
 #include <iostream>
 using namespace std;
 class Time{
+protected:
     int hour;
     int minute;
-    double durationinHours;
 public:
-    Time(int h=0,int m=0,double d=0.0);
+    Time(int h=0,int m=0);
     void setHour(int h);
     int getHour();
     void setMinute(int m);
     int getMinute();
-    void setDuration(double d);
-    double getDuration();
     void display();
-    void calculateDuration(Time t1, Time t2);
 };
-
-class Routes{
+// defined
+class Routes:public Time{
     string source;
     string destination;
     double distance;
@@ -39,8 +36,10 @@ public:
     Time getArrival();
     void display();
     void calculateFare(double dis);
-    void calculateArrival(Time dep,double dis);
+    // overload << operator
+    friend ostream& operator<<(ostream& out,Routes& r);
 };
+// defined
 class Vehicle{
     string name;
     int capacity;
@@ -51,7 +50,10 @@ public:
     void setCapacity(int c);
     int getCapacity();
     void display();
+    // overload << operator
+    friend ostream& operator<<(ostream& out,Vehicle& v);
 };
+// defined
 class Booking{
     bool status; // completed or not
     Routes route;
@@ -65,4 +67,19 @@ public:
     void setVehicle(Vehicle v);
     Vehicle getVehicle();
     void display();
+    // overload << operator
+    friend ostream& operator<<(ostream& out,Booking& b);
 };
+// defined
+class User{
+    string name;
+    Booking booking;
+public:
+    User(string n=" ",Booking b=Booking());
+    void setName(string n);
+    string getName();
+    void setBooking(Booking b);
+    Booking getBooking();
+    void display();
+};
+// defined
