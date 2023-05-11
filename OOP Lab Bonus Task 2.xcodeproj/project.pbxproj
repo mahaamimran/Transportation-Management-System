@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		EA16638B2A0CD7C800DCF552 /* OOP Lab Bonus Task 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OOP Lab Bonus Task 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA16638E2A0CD7C800DCF552 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EA1663952A0CDCB900DCF552 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				EA16638E2A0CD7C800DCF552 /* main.cpp */,
+				EA1663952A0CDCB900DCF552 /* Header.h */,
 			);
 			path = "OOP Lab Bonus Task 2";
 			sourceTree = "<group>";
