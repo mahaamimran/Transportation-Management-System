@@ -5,7 +5,7 @@
 ### Clone the repository: 
 - Run the command: 
 ```shell
-git clone https://github.com/mahaamimran/OOP-Lab-Bonus-Task-2.git
+git clone https://github.com/mahaamimran/Transportation-Management-System.git
 ```
 - Compile and run 
 ##### - Maham
